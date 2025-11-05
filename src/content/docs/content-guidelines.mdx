@@ -1,0 +1,135 @@
+---
+title: "Content Guidelines"
+description: "Standards and best practices for creating content"
+order: 2
+category: "Writing"
+---
+
+# Content Guidelines
+
+Follow these guidelines to create consistent, high-quality content for the knowledge base.
+
+## Writing Style
+
+### Clarity First
+
+- Use clear, concise language
+- Avoid jargon unless necessary
+- Define technical terms on first use
+- Write for your audience
+
+### Structure
+
+- Start with a clear introduction
+- Use headings to organize content
+- Keep paragraphs short (3-5 sentences)
+- Use lists for multiple items
+
+### Tone
+
+- Professional but friendly
+- Active voice preferred
+- Second person ("you") for instructions
+- Present tense for current information
+
+## Formatting
+
+### Headings
+
+Use semantic heading hierarchy:
+
+```markdown
+# Page Title (H1 - only one per page)
+## Main Section (H2)
+### Subsection (H3)
+#### Minor Section (H4)
+```
+
+### Code Blocks
+
+Always specify the language for syntax highlighting:
+
+```typescript
+// TypeScript example
+interface User {
+  name: string;
+  email: string;
+}
+```
+
+### Links
+
+Use descriptive link text:
+
+- Good: "Read the [deployment guide](/docs/deployment)"
+- Bad: "Click [here](/docs/deployment)"
+
+## Content Types
+
+### Blog Posts
+
+- Announcements and updates
+- Feature spotlights
+- Team news
+- Use tags for categorization
+
+### Documentation
+
+- How-to guides
+- Technical references
+- API documentation
+- Organized by category
+
+### Pages
+
+- Static content (About, Contact, etc.)
+- Landing pages
+- General information
+
+## Frontmatter Requirements
+
+### Blog Posts
+
+```yaml
+---
+title: "Post Title"
+description: "Brief description"
+pubDate: 2025-11-05
+author: "Your Name"
+tags: ["tag1", "tag2"]
+draft: false
+---
+```
+
+### Documentation
+
+```yaml
+---
+title: "Doc Title"
+description: "Brief description"
+order: 1
+category: "Category Name"
+---
+```
+
+## Images
+
+- Store images in `/public/uploads/`
+- Use descriptive filenames
+- Optimize images before uploading
+- Always include alt text
+
+```markdown
+![Alt text description](/uploads/image-name.jpg)
+```
+
+## Review Checklist
+
+Before publishing, verify:
+
+- [ ] All required frontmatter fields present
+- [ ] Headings follow proper hierarchy
+- [ ] Links are working
+- [ ] Code examples are tested
+- [ ] Images have alt text
+- [ ] Spelling and grammar checked

@@ -1,0 +1,78 @@
+---
+title: "Getting Started"
+description: "Quick start guide for using the knowledge base"
+order: 1
+category: "Introduction"
+---
+
+# Getting Started
+
+This guide will help you get up and running with the knowledge base system.
+
+## Prerequisites
+
+- GitHub account with access to the repository
+- (For developers) Node.js 20+ installed locally
+
+## Accessing the System
+
+### Via Web Interface
+
+1. Navigate to the knowledge base URL
+2. Browse content by category or use search
+3. To edit content, visit `/admin` and authenticate with GitHub
+
+### Via Local Development
+
+For developers who want to run the system locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-org/knowledge-base.git
+cd knowledge-base
+
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.example .env
+# Edit .env with your GitHub credentials
+
+# Start development server
+npm run dev
+```
+
+The site will be available at `http://localhost:4321`
+
+## Creating Content
+
+### Using Tina CMS
+
+1. Visit `/admin`
+2. Authenticate with GitHub
+3. Click "Create New" and select content type
+4. Fill in the required fields
+5. Write your content in the rich text editor
+6. Click "Save" to commit to GitHub
+
+### Using Files Directly
+
+1. Navigate to `src/content/{type}/`
+2. Create a new `.mdx` file
+3. Add frontmatter with required fields
+4. Write your content
+5. Commit and push
+
+## Best Practices
+
+- Use descriptive titles and descriptions
+- Add relevant tags to blog posts
+- Keep documentation organized by category
+- Include code examples where helpful
+- Use proper heading hierarchy
+
+## Next Steps
+
+- Read the [Content Guidelines](/docs/content-guidelines)
+- Learn about [MDX Components](/docs/mdx-components)
+- Explore [Advanced Features](/docs/advanced-features)
