@@ -1,0 +1,60 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-background">
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="space-y-3">
+        <h3 class="font-semibold">Knowledge Base</h3>
+        <p class="text-sm text-muted-foreground">
+          Internal documentation and knowledge sharing platform
+        </p>
+      </div>
+      <div class="space-y-3">
+        <h4 class="font-semibold text-sm">Content</h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/blog" class="text-muted-foreground hover:text-foreground transition-colors">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="/docs" class="text-muted-foreground hover:text-foreground transition-colors">
+              Documentation
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h4 class="font-semibold text-sm">Resources</h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/about" class="text-muted-foreground hover:text-foreground transition-colors">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="/admin" class="text-muted-foreground hover:text-foreground transition-colors">
+              CMS Admin
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h4 class="font-semibold text-sm">Technology</h4>
+        <ul class="space-y-2 text-sm text-muted-foreground">
+          <li>Astro 4.x</li>
+          <li>React + TypeScript</li>
+          <li>Tailwind CSS</li>
+          <li>Tina CMS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-border">
+      <p class="text-sm text-muted-foreground text-center">
+        © {currentYear} Knowledge Base. Built with Astro.
+      </p>
+    </div>
+  </div>
+</footer>

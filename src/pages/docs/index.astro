@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const allDocs = await getCollection('docs');
+
+// Group docs by category and sort by order
+const docsByCategory = allDocs.reduce((acc, doc) => {
+  const category = doc.data.category;
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(doc);
+  return acc;
+}, {} as Record<string, typeof allDocs>);
+
+// Sort docs within each category by order
+Object.keys(docsByCategory).forEach((category) => {
+  docsByCategory[category].sort((a, b) => a.data.order - b.data.order);
+});
+
+const categories = Object.keys(docsByCategory).sort();
+---
+
+<MainLayout title="Documentation" description="Guides and references">
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <div class="space-y-2 mb-12">
+      <h1 class="text-4xl font-bold">Documentation</h1>
+      <p class="text-xl text-muted-foreground">
+        Guides, tutorials, and technical references
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      {categories.map((category) => (
+        <section>
+          <h2 class="text-2xl font-bold mb-6">{category}</h2>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {docsByCategory[category].map((doc) => (
+              <a
+                href={`/docs/${doc.slug}`}
+                class="group block p-6 border border-border rounded-lg hover:border-primary transition-colors"
+              >
+                <h3 class="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
+                  {doc.data.title}
+                </h3>
+                <p class="text-sm text-muted-foreground">
+                  {doc.data.description}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    {categories.length === 0 && (
+      <p class="text-center text-muted-foreground py-12">
+        No documentation yet. Check back soon!
+      </p>
+    )}
+  </div>
+</MainLayout>
