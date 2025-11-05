@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Search from '../components/content/Search';
 
 interface Props {
   title: string;
@@ -28,5 +29,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <slot />
+    <Search client:load />
   </body>
 </html>
