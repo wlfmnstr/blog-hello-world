@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<BaseLayout title="Knowledge Base - Home">
-  <main class="min-h-screen flex items-center justify-center p-8">
+<MainLayout title="Knowledge Base - Home">
+  <div class="min-h-[calc(100vh-4rem)] flex items-center justify-center p-8">
     <div class="max-w-2xl text-center space-y-6">
       <h1 class="text-4xl font-bold">Knowledge Base</h1>
       <p class="text-xl text-muted-foreground">
@@ -27,5 +27,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>Built with Astro + React + TypeScript + Tailwind CSS</p>
       </div>
     </div>
-  </main>
-</BaseLayout>
+  </div>
+</MainLayout>
