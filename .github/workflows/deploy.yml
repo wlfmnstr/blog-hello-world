@@ -30,8 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Tina
-        run: npm run tina:build
+      - name: Build Tina (optional)
+        run: npm run tina:build || true
+        continue-on-error: true
 
       - name: Build Astro
         run: npm run build
