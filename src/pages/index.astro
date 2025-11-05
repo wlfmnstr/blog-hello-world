@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Knowledge Base - Home">
+  <main class="min-h-screen flex items-center justify-center p-8">
+    <div class="max-w-2xl text-center space-y-6">
+      <h1 class="text-4xl font-bold">Knowledge Base</h1>
+      <p class="text-xl text-muted-foreground">
+        Internal documentation and knowledge sharing system
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a
+          href="/blog"
+          class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          View Blog
+        </a>
+        <a
+          href="/docs"
+          class="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+        >
+          Documentation
+        </a>
+      </div>
+      <div class="pt-8 text-sm text-muted-foreground">
+        <p>Built with Astro + React + TypeScript + Tailwind CSS</p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
