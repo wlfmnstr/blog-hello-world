@@ -18,7 +18,7 @@ This is a Git-based knowledge base system with dual editing capabilities:
 - **Styling**: Tailwind CSS 3.4+ (utility-first approach)
 - **CMS**: Tina CMS 2.2+ (GitHub API backend)
 - **Content**: MDX files with frontmatter (Zod schema validation)
-- **Search**: Pagefind 1.1+ (static index built during CI/CD)
+- **Search**: Pagefind 1.x (static index built during CI/CD)
 
 ## Code Standards & Conventions
 
@@ -67,8 +67,7 @@ This is a Git-based knowledge base system with dual editing capabilities:
 ├── src/
 │   ├── components/
 │   │   ├── layout/        # Header, Footer, ThemeToggle
-│   │   ├── content/       # Search, BlogCard, DocCard
-│   │   └── mdx/          # Custom MDX components
+│   │   └── content/       # Search, BlogCard, DocCard
 │   ├── layouts/          # BaseLayout, MainLayout
 │   ├── pages/            # Astro pages (file-based routing)
 │   │   ├── index.astro
@@ -128,8 +127,8 @@ npm run astro check      # Check TypeScript types
 {
   title: string          // Required
   description: string    // Required
-  order: number         // Optional (for sorting)
-  category: string      // Optional (for grouping)
+  order: number         // Required (for sorting)
+  category: string      // Required (for grouping)
 }
 ```
 
@@ -243,7 +242,7 @@ Edit `src/components/layout/Header.astro` for main navigation links.
 Edit CSS custom properties in `src/styles/global.css` under `:root` and `[data-theme="dark"]`.
 
 ### Adding MDX Components
-1. Create component in `src/components/mdx/`
+1. Create component in `src/components/content/` or as needed
 2. Export from component file
 3. Import in MDX files where needed
 
